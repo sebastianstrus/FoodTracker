@@ -393,7 +393,14 @@
                             <outlet property="delegate" destination="81I-Xd-ojw" id="rbZ-kq-871"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favorite" id="T5v-Xk-uwU"/>
+                    <navigationItem key="navigationItem" title="Favorite" id="T5v-Xk-uwU">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="trash" id="1aI-dU-LLg">
+                            <color key="tintColor" red="1" green="0.1570271949" blue="0.098503564739999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deleteAll:" destination="81I-Xd-ojw" id="u2V-Tn-kPz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBj-L8-3Xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

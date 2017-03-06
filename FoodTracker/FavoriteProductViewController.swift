@@ -38,13 +38,6 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
             carbohydratesLabel?.text = "carbohydrates: \(p.carbohydrates)"
             value.text = "Nyttighetsvärde: \(p.productValue)"
             
-            
-            /*if let image = p.productImage {
-                imageView.image = UIImage(named: image)
-            }*/
-            
-            
-            
         }
         
         // Animations
@@ -244,7 +237,6 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
     func createParticles() {
         let view = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         view.contentMode = UIViewContentMode.scaleAspectFill
-        //view.image = UIImage(named: "landscape")
         self.view.addSubview(view)
         let cloud = CAEmitterLayer()
         cloud.emitterPosition = CGPoint(x: view.center.x, y: -50)

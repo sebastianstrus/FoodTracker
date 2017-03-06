@@ -83,12 +83,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showSegue", sender: products[indexPath.row])//.name)
+        performSegue(withIdentifier: "showSegue", sender: products[indexPath.row])
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let guest = segue.destination as! ProductViewController
-        guest.product = sender as! Product
+        guest.product = sender as? Product
         
     }
     

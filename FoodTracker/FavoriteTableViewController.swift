@@ -3,8 +3,6 @@ import CoreData
 
 class FavoriteTableViewController: UITableViewController {
 
-
-    
     var favoriteProducts : [Product] = []
     
     override func viewDidLoad() {
@@ -15,6 +13,52 @@ class FavoriteTableViewController: UITableViewController {
         self.tableView.backgroundView = UIImageView(image: backgroundImage)
         tableView.backgroundColor = UIColor.clear
 
+    }
+    
+    @IBAction func deleteAll(_ sender: UIBarButtonItem) {
+        let isEmpty = favoriteProducts.isEmpty
+        let message = isEmpty ? "Inga favoriter." : "Vill du ta bort alla näringsämnen?"
+        let alertController = UIAlertController(title: "DELETE ALL ITEMS", message: message, preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (result: UIAlertAction) -> Void in
+            print("ok")
+        }
+        let deleteAllAction = UIAlertAction(title: "Delete", style: .destructive) { (result: UIAlertAction) -> Void in
+            self.deleteAllData(entity: "Products")
+            self.favoriteProducts.removeAll()
+            self.tableView.reloadData()
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (result: UIAlertAction) -> Void in
+            print("cancel")
+        }
+        if !isEmpty {
+            alertController.addAction(deleteAllAction)
+            alertController.addAction(cancelAction)
+        }
+        else {
+            alertController.addAction(okAction)
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func deleteAllData(entity: String)
+    {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        do
+        {
+            let results = try managedContext.fetch(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.delete(managedObjectData)
+                try managedContext.save()
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
+        }
     }
 
     // MARK: - Table view data source
@@ -109,9 +153,6 @@ class FavoriteTableViewController: UITableViewController {
                     if let number = result.value(forKey: "number") as? Int {
                         product.number = number
                     }
-                    /*if let productImage = result.value(forKey: "productImage") as? Data {
-                        product.productImage = productImage
-                    }*/
                     if let productValue = result.value(forKey: "productValue") as? Double {
                         product.productValue = productValue
                     }
@@ -140,5 +181,4 @@ class FavoriteTableViewController: UITableViewController {
         }
         return tempProducts
     }
-
 }

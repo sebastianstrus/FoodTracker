@@ -120,8 +120,7 @@ class CompareViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if !results.isEmpty {
                     for result in results as! [NSManagedObject] {
                         if let name = result.value(forKey: "name") as? String {
-                            //TODO: set old and new image that vill change image in CoreData
-                            if name == productsToCompare[indexPath.row].name {//or == unik number
+                            if name == productsToCompare[indexPath.row].name {
                                 context.delete(result as NSManagedObject)
                                 print("deleted")
                                 do {

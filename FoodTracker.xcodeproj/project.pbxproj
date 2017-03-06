@@ -146,6 +146,7 @@
 				TargetAttributes = {
 					7D6A63D81E5A636400AB7E58 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4SL936GBZY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -364,7 +365,7 @@
 			baseConfigurationReference = 01BF1D374E91E3EF33D12CF6 /* Pods-FoodTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4SL936GBZY;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SEB.FoodTracker;
@@ -378,7 +379,7 @@
 			baseConfigurationReference = AB27AA4C33CEB84F99EF7B86 /* Pods-FoodTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4SL936GBZY;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SEB.FoodTracker;
