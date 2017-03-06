@@ -11,12 +11,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         searchField.delegate = self
         self.animateTable()
-
         tableView.backgroundColor = UIColor.clear
         tableView.rowHeight = 30.0
         tableView.dataSource = self
         tableView.delegate = self
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method

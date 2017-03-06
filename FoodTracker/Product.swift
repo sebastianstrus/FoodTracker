@@ -3,7 +3,7 @@ import UIKit
 class Product: NSObject {
     var name:String?
     var number: Int?
-    var productImage: String? = "cameraImage"
+    var productImage: NSData? = nil
     var productValue = 0.0
     
     var energyKj = 0.0
@@ -15,7 +15,7 @@ class Product: NSObject {
     var compared = false
     
     override var description: String {
-        return "ProductName: \(name), number: \(number), productImage: \(productImage), carbohydrates: \(carbohydrates)"
+        return "ProductName: \(name), number: \(number), productImage: , carbohydrates: \(carbohydrates)"
     }
 }
 

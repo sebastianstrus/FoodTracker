@@ -30,12 +30,21 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
             if let num = p.number {
                 setDataInView(number: num)
             }
+            
             energyKjLabel?.text = "energyKj: \(p.energyKj)"
             energyKcalLabel?.text = "energyKcal: \(p.energyKcal)"
             proteinLabel?.text = "protein: \(p.protein)"
             fatLabel?.text = "fat: \(p.fat)"
             carbohydratesLabel?.text = "carbohydrates: \(p.carbohydrates)"
             value.text = "Nyttighetsvärde: \(p.productValue)"
+            
+            
+            /*if let image = p.productImage {
+                imageView.image = UIImage(named: image)
+            }*/
+            
+            
+            
         }
         
         // Animations
@@ -120,13 +129,18 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func cameraButtonAction(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        /*if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
+        }*/
+        let alertController = UIAlertController(title: "Information", message: "Choose from foto library!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (result: UIAlertAction) -> Void in
         }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func fotoLibraryAction(_ sender: UIButton) {
@@ -139,13 +153,21 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
         }
     }
     
-    @IBAction func saveButton(_ sender: UIButton) {
+    
+    func saveImage() {
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.6)
         let compressedIPEGImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compressedIPEGImage!, nil, nil, nil)
-        saveNotice()
+    }
+    
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        imageView.image = image
+        let imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
         
-        //update image in  Core data for current object
+        UserDefaults.standard.set(imageData, forKey: "productImage")
+        
+        self.dismiss(animated: true, completion: nil);
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Products")
@@ -154,31 +176,29 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
             let results = try context.fetch(request)
             if !results.isEmpty {
                 for result in results as! [NSManagedObject] {
-                    if let productImage = result.value(forKey: "productImage") as? String {
-                        //TODO: set old and new image that vill change image in CoreData
-                        if productImage == "old_image" {//or == unik number
-                            result.setValue("new_image", forKey: "productImage")
-                            do {
-                                try context.save()
-                            }
-                            catch {
-                                print("error")
-                            }
+                    if let number = result.value(forKey: "number") as? Int {
+                    
+                        if number == product?.number {
+
+                            result.setValue(imageData, forKey: "productImage")
+                        }
+                        do {
+                            try context.save()
+                            print("Saved")
+                        }
+                        catch {
+                            print("Error when saving")
                         }
                     }
                 }
             }
-            
         }
         catch
         {
             print("error when retrieving")
         }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-        imageView.image = image
-        self.dismiss(animated: true, completion: nil);
+        saveImage()
+        saveNotice()
     }
     
     func saveNotice() {
@@ -206,6 +226,9 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
                             self.product?.fat = (result.value(forKey: "fat") as? Double)!
                             self.product?.carbohydrates = (result.value(forKey: "carbohydrates") as? Double)!
                             self.product?.productValue = (result.value(forKey: "productValue") as? Double)!
+                            if let data = result.value(forKey: "productImage") as? NSData {
+                                imageView.image = UIImage(data: data as Data)
+                            }
                         }
                     }
                 }

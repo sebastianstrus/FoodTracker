@@ -109,9 +109,9 @@ class FavoriteTableViewController: UITableViewController {
                     if let number = result.value(forKey: "number") as? Int {
                         product.number = number
                     }
-                    if let productImage = result.value(forKey: "productImage") as? String {
+                    /*if let productImage = result.value(forKey: "productImage") as? Data {
                         product.productImage = productImage
-                    }
+                    }*/
                     if let productValue = result.value(forKey: "productValue") as? Double {
                         product.productValue = productValue
                     }
