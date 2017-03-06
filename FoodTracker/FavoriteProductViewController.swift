@@ -18,11 +18,11 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
         super.viewDidLoad()
         createParticles()
         
-        energyKjLabel.center = CGPoint(x: view.frame.size.width*2, y: view.frame.size.height/3 + 30)
+        energyKjLabel.center = CGPoint(x: view.frame.size.width*2, y: view.frame.size.height/3 + 40)
         energyKcalLabel.center = CGPoint(x: -view.frame.size.width, y: view.frame.size.height/3 + 60)
-        proteinLabel.center = CGPoint(x: view.frame.size.width*2, y: view.frame.size.height/3 + 90)
-        fatLabel.center = CGPoint(x: -view.frame.size.width, y: view.frame.size.height/3 + 120)
-        carbohydratesLabel.center = CGPoint(x: view.frame.size.width*2, y: view.frame.size.height/3 + 150)
+        proteinLabel.center = CGPoint(x: view.frame.size.width*2, y: view.frame.size.height/3 + 80)
+        fatLabel.center = CGPoint(x: -view.frame.size.width, y: view.frame.size.height/3 + 100)
+        carbohydratesLabel.center = CGPoint(x: view.frame.size.width*2, y: view.frame.size.height/3 + 120)
         
         if let p = product {
             titleLabel.text = p.name
@@ -41,10 +41,10 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
         // Animations
         UIView.beginAnimations("Move properties", context: nil)
         UIView.setAnimationDuration(2.0)
-        energyKjLabel.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/3 + 20)
-        energyKcalLabel.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/3 + 45)
-        proteinLabel.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/3 + 70)
-        fatLabel.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/3 + 95)
+        energyKjLabel.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/3 + 40)
+        energyKcalLabel.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/3 + 60)
+        proteinLabel.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/3 + 80)
+        fatLabel.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/3 + 100)
         carbohydratesLabel.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/3 + 120)
         UIView.commitAnimations()
     }
