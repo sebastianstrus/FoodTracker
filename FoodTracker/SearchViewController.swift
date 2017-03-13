@@ -9,8 +9,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
         searchField.delegate = self
         self.animateTable()
         tableView.backgroundColor = UIColor.clear
@@ -75,6 +73,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             print("Failed to create url.")
         }
+        view.endEditing(true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
