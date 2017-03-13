@@ -17,6 +17,9 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         createParticles()
+        setNiceImageView()
+        
+        
         
         energyKjLabel.center = CGPoint(x: view.frame.size.width*2, y: view.frame.size.height/3 + 40)
         energyKcalLabel.center = CGPoint(x: -view.frame.size.width, y: view.frame.size.height/3 + 60)
@@ -29,6 +32,7 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
             
             if let num = p.number {
                 setDataInView(number: num)
+                
             }
             
             energyKjLabel?.text = "energyKj: \(p.energyKj)"
@@ -39,6 +43,9 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
             value.text = "Nyttighetsvärde: \(p.productValue)"
             
         }
+        
+        
+        
         
         // Animations
         UIView.beginAnimations("Move properties", context: nil)
@@ -192,7 +199,6 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
         }
         saveImage()
         saveNotice()
-        setNiceImageView()
     }
     
     func saveNotice() {
@@ -263,7 +269,7 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
     }
     
     func setNiceImageView() {
-        imageView.layer.borderWidth = 1.0
+        //imageView.layer.borderWidth = 1.0
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 10
     }
