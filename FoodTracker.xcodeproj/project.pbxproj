@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5B78F232C5ABD55612D096CB /* Pods_FoodTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2A1EF026D9ADB22320390C /* Pods_FoodTracker.framework */; };
-		7D049DCB1E6CAFCA003DCDAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D049DCA1E6CAFCA003DCDAA /* Assets.xcassets */; };
 		7D11E2A61E6549030079DD3D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11E2A51E6549030079DD3D /* SearchViewController.swift */; };
 		7D11E2A81E6550250079DD3D /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11E2A71E6550250079DD3D /* ProductViewController.swift */; };
 		7D11E2AA1E65968F0079DD3D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11E2A91E65968F0079DD3D /* Product.swift */; };
@@ -19,12 +18,12 @@
 		7D6A63DD1E5A636400AB7E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A63DC1E5A636400AB7E58 /* AppDelegate.swift */; };
 		7D6A63E21E5A636400AB7E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6A63E01E5A636400AB7E58 /* Main.storyboard */; };
 		7D6A63E71E5A636400AB7E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6A63E51E5A636400AB7E58 /* LaunchScreen.storyboard */; };
+		7DA1BA991E74EC04007640F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA1BA981E74EC04007640F2 /* Assets.xcassets */; };
 		7DA7E1E51E675758009E27D8 /* FavoriteProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7E1E41E675758009E27D8 /* FavoriteProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01BF1D374E91E3EF33D12CF6 /* Pods-FoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTracker/Pods-FoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
-		7D049DCA1E6CAFCA003DCDAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D11E2A51E6549030079DD3D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7D11E2A71E6550250079DD3D /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		7D11E2A91E65968F0079DD3D /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		7D6A63E11E5A636400AB7E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D6A63E61E5A636400AB7E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D6A63E81E5A636400AB7E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DA1BA981E74EC04007640F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA7E1E41E675758009E27D8 /* FavoriteProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteProductViewController.swift; sourceTree = "<group>"; };
 		AB27AA4C33CEB84F99EF7B86 /* Pods-FoodTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTracker/Pods-FoodTracker.release.xcconfig"; sourceTree = "<group>"; };
 		EA2A1EF026D9ADB22320390C /* Pods_FoodTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,8 +87,8 @@
 			children = (
 				7D6A63DC1E5A636400AB7E58 /* AppDelegate.swift */,
 				7D6A63E01E5A636400AB7E58 /* Main.storyboard */,
+				7DA1BA981E74EC04007640F2 /* Assets.xcassets */,
 				7D6A63E51E5A636400AB7E58 /* LaunchScreen.storyboard */,
-				7D049DCA1E6CAFCA003DCDAA /* Assets.xcassets */,
 				7D6A63E81E5A636400AB7E58 /* Info.plist */,
 				7D11E2A51E6549030079DD3D /* SearchViewController.swift */,
 				7D11E2A71E6550250079DD3D /* ProductViewController.swift */,
@@ -175,7 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D6A63E71E5A636400AB7E58 /* LaunchScreen.storyboard in Resources */,
-				7D049DCB1E6CAFCA003DCDAA /* Assets.xcassets in Resources */,
+				7DA1BA991E74EC04007640F2 /* Assets.xcassets in Resources */,
 				7D6A63E21E5A636400AB7E58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,10 +365,12 @@
 			baseConfigurationReference = 01BF1D374E91E3EF33D12CF6 /* Pods-FoodTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4SL936GBZY;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SEB.FoodTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = seb.3257FoofTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -379,10 +381,11 @@
 			baseConfigurationReference = AB27AA4C33CEB84F99EF7B86 /* Pods-FoodTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4SL936GBZY;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SEB.FoodTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = seb.3257FoofTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

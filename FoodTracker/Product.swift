@@ -1,6 +1,6 @@
 import UIKit
 
-class Product: NSObject {
+class Product {
     
     var name:String?
     var number: Int?

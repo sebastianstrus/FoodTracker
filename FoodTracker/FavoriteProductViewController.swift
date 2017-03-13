@@ -122,18 +122,18 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func cameraButtonAction(_ sender: UIButton) {
-        /*if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
-        }*/
-        let alertController = UIAlertController(title: "Information", message: "Choose from foto library!", preferredStyle: .alert)
+        }
+        /*let alertController = UIAlertController(title: "Information", message: "Choose from foto library!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (result: UIAlertAction) -> Void in
         }
         alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)*/
     }
     
     @IBAction func fotoLibraryAction(_ sender: UIButton) {
@@ -158,7 +158,7 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
         imageView.image = image
         let imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
         
-        UserDefaults.standard.set(imageData, forKey: "productImage")
+        //UserDefaults.standard.set(imageData, forKey: "productImage")
         
         self.dismiss(animated: true, completion: nil);
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -192,6 +192,7 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
         }
         saveImage()
         saveNotice()
+        setNiceImageView()
     }
     
     func saveNotice() {
@@ -259,5 +260,11 @@ class FavoriteProductViewController: UIViewController, UIImagePickerControllerDe
         cell.scaleRange = -0.05
         cell.contents = UIImage(named: "snow")?.cgImage
         return cell
+    }
+    
+    func setNiceImageView() {
+        imageView.layer.borderWidth = 1.0
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 10
     }
 }

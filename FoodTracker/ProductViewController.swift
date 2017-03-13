@@ -154,7 +154,7 @@ class ProductViewController: UIViewController {
                                     DispatchQueue.main.async {
                                         self.product?.carbohydrates = carbohydrates
                                         self.carbohydratesLabel?.text = "carbohydrates: \(carbohydrates)"
-                                        majorValue = majorValue + carbohydrates * 5 + 5.5
+                                        majorValue = (majorValue + carbohydrates * 5 + 5.5)*5
                                         self.value.text = "Nyttighetsvärde: \(majorValue)"
                                         self.product?.productValue = majorValue
                                     }
@@ -173,4 +173,6 @@ class ProductViewController: UIViewController {
             task.resume()
         }
     }
+    
+
 }

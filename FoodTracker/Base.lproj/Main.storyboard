@@ -176,7 +176,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUx-rt-7Gt">
-                                <rect key="frame" x="0.0" y="587" width="183" height="30"/>
+                                <rect key="frame" x="0.0" y="587" width="183.5" height="30"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
                                     <action selector="cameraButtonAction:" destination="lig-R4-e2J" eventType="touchUpInside" id="Bxl-3W-EFi"/>
@@ -195,7 +195,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPd-Lr-pI9">
-                                <rect key="frame" x="191" y="588" width="184" height="30"/>
+                                <rect key="frame" x="191.5" y="588" width="183.5" height="30"/>
                                 <state key="normal" title="Open library"/>
                                 <connections>
                                     <action selector="fotoLibraryAction:" destination="lig-R4-e2J" eventType="touchUpInside" id="cRW-Lv-RWo"/>
@@ -269,7 +269,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="22" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rqD-8Q-t3n">
-                                <rect key="frame" x="16" y="83" width="343" height="184"/>
+                                <rect key="frame" x="16" y="83" width="343" height="165"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="Bk8-Nn-rFg"/>
@@ -300,7 +300,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqg-AP-aGd" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="333" width="343" height="267"/>
+                                <rect key="frame" x="16" y="314" width="343" height="286"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="267" id="lKv-tP-igM"/>
